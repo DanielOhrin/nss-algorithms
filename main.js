@@ -1,26 +1,7 @@
-# Rocket Fuel
+// Define a function that takes in an array of integers. 
+// Divide each number in the array by 3, round down, then subtract 2
+// Return the sum
 
-The Earth probe, Surveyor, has become stranded at the edge of the Solar System after encountering some space dust. To accurately calculate its position in space, safely align its nuclear drive, and continue on its journey, you need to determine its fuel requirements.
-
-Fuel required to power a given module is based on its mass. Specifically, to find the fuel required for a module, take its mass, divide by three, round down, and subtract 2.
-
-For example:
-
-For a mass of 12, divide by 3 and round down to get 4, then subtract 2 to get 2.
-
-For a mass of 14, dividing by 3 and rounding down still yields 4, so the fuel required is also 2.
-
-For a mass of 1969, the fuel required is 654.
-
-For a mass of 100756, the fuel required is 33583.
-
-The Fuel Management team for the project needs to know the total fuel requirement. To find it, individually calculate the fuel needed for the mass of each module, then add together all the fuel values.
-
-What is the sum of the fuel requirements for all of the modules on your spacecraft?
-
-Here is the masses of each module on Surveyor.
-
-```js
 const moduleMasses = [
     53035,
     84950,
@@ -67,17 +48,17 @@ const moduleMasses = [
     122453,
     98141,
     61137,
-    97628
+    97628,
     126791,
     111826,
     50630,
-    67829
+    67829,
     126285,
     97331,
     88587,
     64552,
     111221,
-    89639
+    89639,
     72177,
     132711,
     51062,
@@ -123,4 +104,17 @@ const moduleMasses = [
     75777,
     107333,
 ]
-```
+const testMass = [12, 14, 1969, 100756]
+
+const fuelRequired = (numArray) => {
+    let roundedNums = numArray.map(num => {
+        return Math.floor(num / 3) - 2
+    })
+
+    return roundedNums.reduce((total, currentValue) => {
+        return total += currentValue
+    })
+}
+
+console.log(fuelRequired(moduleMasses))
+console.log(fuelRequired(testMass))
