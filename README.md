@@ -1,1 +1,5 @@
-This repository has a branch for each algorithmic thinking challenge in NSS' coursework.
+# Palindrome Numbers
+
+A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+Find the largest palindrome made from the product of two 3-digit numbers.
