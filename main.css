@@ -1,0 +1,13 @@
+#inputs {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+input {
+    width: 15%;
+    margin-bottom: 10px;
+}
+
+#calculate {
+    width: 5%;
+}
