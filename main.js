@@ -6,8 +6,8 @@ const grades = [17, 94, 83, 75, 37, 49, 19, 84, 81] // should return [17, 95, 85
 const roundGrades = (numArray) => {
     const roundedNumArray = []
 
-    if (numArray.length > 30 || !numArray.every(num => 0 < num && num < 100)) {
-        return `Only grade up to 30 students at a time. Make sure each of their grades is inputted correctly.`
+    if (numArray.length > 29 || numArray.length < 1 || !numArray.every(num => 0 < num && num < 100)) {
+        return `Only grade between 1 & 29 students at a time. Make sure each of their grades is inputted correctly.`
     }
 
     numArray.forEach(num => {
