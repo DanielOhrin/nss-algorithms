@@ -1,28 +1,8 @@
-# Frequency Frenzy
+//Define a function that takes in an array of integers that MAY include a subtraction symbol.
+    // If no symbol, add a +
+    // Return the final value after all operations are completed
 
-As an intrepid archaeologist, you and your team communicate with custom built devices that broadcast on a rotating frequency that all devices synchronize with. Unfortunately, today you look at the device's tiny screen. "Error: Device must be calibrated before first use. Frequency drift detected. Cannot maintain destination lock."
-
-Below the message, the device shows a sequence of changes in frequency made to this point in the day. A value like +6 means the current frequency increases by 6; a value like -3 means the current frequency decreases by 3.
-
-For example, if the device displays frequency changes of +1, -2, +3, +1, then starting from a frequency of zero, the following changes would occur:
-
-* Current frequency  0, change of +1; resulting frequency  1.
-* Current frequency  1, change of -2; resulting frequency -1.
-* Current frequency -1, change of +3; resulting frequency  2.
-* Current frequency  2, change of +1; resulting frequency  3.
-
-In this example, the resulting frequency is 3.
-
-Here are other example situations:
-
-* +1, +1, +1 results in  3
-* +1, +1, -2 results in  0
-* -1, -2, -3 results in -6
-
-Starting with a frequency of zero, what is the resulting frequency after all of the changes in frequency have been applied?
-
-```js
-const frequencyChanges = [ 12, -10, -4, -8, 18, -1, -13,
+const frequencyChanges = [12, -10, -4, -8, 18, -1, -13,
     10, -13, 5, 7, 6, 14, -9, -8, 7, 18, -11, 13, -1, 20, 11,
     13, -2, 3, -8, -16, 4, -6, -3, -9, -12, 16, 17, -5, -11,
     2, -20, -15, 5, 3, 11, -13, -18, -13, -6, -19, 6, -15,
@@ -91,15 +71,16 @@ const frequencyChanges = [ 12, -10, -4, -8, 18, -1, -13,
     -19, 18, -3, 20, -7, -3, 77, 1, 42, 18, 9, -1, 23, 57, 8,
     -12, 1, 5, 12, 3, 10, -1, 14, 20, -7, -3, -14, -12, 9, 16,
     16, 12, 14, 11, 11, 2, 1, 19, -10, 18, -17, -9, -11, -8,
-    10, -1, -110292 ]
-```
+    10, -1, -110292]
 
-## Helpful Hint
+const frequency = (freqArray) => {
+    let finalFrequency = 0
 
-Don't look at the hint unless you're stuck, or you feel you have a successful algorithm.
+    freqArray.forEach(int => {
+        finalFrequency += int
+    })
 
-<details>
-    <summary>Final Frequency</summary>
+    return finalFrequency
+}
 
-408
-</details>
+console.log(frequency(frequencyChanges))
