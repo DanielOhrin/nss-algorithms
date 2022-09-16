@@ -75,7 +75,7 @@ const frequencyChanges = [12, -10, -4, -8, 18, -1, -13,
 
 const frequency = (freqArray) => {
     let finalFrequency = [false, 0]
-    let freqList = new Set() 
+    let freqChangeList = new Set() 
     let finalFreqList = new Set()
 
     while (finalFrequency[0] === false) {
@@ -87,18 +87,18 @@ const frequency = (freqArray) => {
                 break
             }
 
-            if (!freqList.has(freqArray[i])) {
-                freqList.add(freqArray[i])
+            if (!freqChangeList.has(freqArray[i])) {
+                freqChangeList.add(freqArray[i])
             } else {
-                freqList.clear()
+                freqChangeList.clear()
                 i = -1
             }
             
             finalFreqList.add(finalFrequency[1])
         }
     }
-
     return finalFrequency[1]
 }
 
-console.log(frequency(frequencyChanges))
+console.log(frequency(frequencyChanges)) // -1
+//! Not sure why the README says expected Duplicate frequency is 55250
